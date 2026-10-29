@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- ============ SEO ============ -->
+  <title>One Stop Tech Solutions | Website Design, SEO &amp; Digital Menu Displays in Ontario</title>
+  <meta name="description" content="One Stop Tech Solutions builds high-quality websites, digital marketing, SEO and smart digital menu displays for small businesses across Ontario, Canada. Free consultation — call 519-992-6711.">
+  <meta name="keywords" content="website design Ontario, small business websites, digital marketing, SEO, digital menu boards, digital menu displays, restaurant menu screens">
+  <meta name="author" content="One Stop Tech Solutions">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#0F2A44">
+  <!-- Replace with your live domain once published -->
+  <link rel="canonical" href="https://www.example.com/">
+
+  <!-- Open Graph / social sharing -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="One Stop Tech Solutions — Websites, Marketing, SEO &amp; Digital Menus">
+  <meta property="og:description" content="Websites, marketing, SEO &amp; smart digital menu displays for small businesses in Ontario.">
+  <meta property="og:image" content="images/work-1.svg">
+  <meta property="og:locale" content="en_CA">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Favicon: teal hexagon (swap for images/favicon.png if you have one) -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpolygon points='50 4 92 28 92 72 50 96 8 72 8 28' fill='%230F2A44' stroke='%234FD1E0' stroke-width='8'/%3E%3C/svg%3E">
+
+  <!-- Structured data for Google (local business) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "One Stop Tech Solutions",
+    "description": "Website design, digital marketing, SEO and smart digital menu displays for small businesses.",
+    "telephone": "+1-519-992-6711",
+    "email": "patelraj.ca@outlook.com",
+    "areaServed": "Ontario, Canada",
+    "address": { "@type": "PostalAddress", "addressRegion": "ON", "addressCountry": "CA" },
+    "url": "https://www.example.com/"
+  }
+  </script>
+
+  <!-- Flag that JS is running (enables preloader + accordion collapse) -->
+  <script>document.documentElement.classList.add('js');</script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Animation libraries (CDN). The site still works if these fail to load. -->
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+  <script defer src="script.js"></script>
+</head>
+
+<body>
+  <!-- Reusable hexagon shape (referenced with <use href="#hex">) -->
+  <svg class="svg-defs" aria-hidden="true" focusable="false" width="0" height="0">
+    <symbol id="hex" viewBox="0 0 100 100">
+      <polygon points="50 2 93 26 93 74 50 98 7 74 7 26" vector-effect="non-scaling-stroke"/>
+    </symbol>
+  </svg>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ================= PRELOADER ================= -->
+  <div class="preloader" id="preloader" aria-hidden="true">
+    <div class="preloader__inner">
+      <div class="preloader__hex-wrap">
+        <svg viewBox="0 0 100 100">
+          <polygon class="preloader__track" points="50 2 93 26 93 74 50 98 7 74 7 26"/>
+          <polygon class="preloader__hex" points="50 2 93 26 93 74 50 98 7 74 7 26" pathLength="1"/>
+        </svg>
+        <span class="preloader__count" data-preloader-count>0</span>
+      </div>
+      <p class="preloader__brand">One Stop Tech Solutions</p>
+    </div>
+  </div>
+
+  <!-- Custom cursor (desktop only, enabled by JS) -->
+  <div class="cursor" aria-hidden="true"><span class="cursor__inner"></span></div>
+
+  <!-- ================= 1. NAVBAR ================= -->
+  <header class="nav" id="nav">
+    <div class="container nav__inner">
+      <a href="#home" class="logo" aria-label="One Stop Tech Solutions — home">
+        <!-- Swap this SVG for <img src="images/logo.png" alt=""> if you have a logo file -->
+        <svg class="logo__mark" viewBox="0 0 100 100" aria-hidden="true">
+          <use href="#hex" class="logo__outer"/>
+          <polygon class="logo__inner" points="50 30 67 40 67 60 50 70 33 60 33 40"/>
+        </svg>
+        <span class="logo__text">
+          <span class="logo__name">One Stop</span>
+          <span class="logo__tag">Tech Solutions</span>
+        </span>
+      </a>
+
+      <nav class="nav__links" aria-label="Main">
+        <a class="nav__link" href="#services">Services</a>
+        <a class="nav__link" href="#menu-displays">Menu Displays</a>
+        <a class="nav__link" href="#work">Work</a>
+        <a class="nav__link" href="#about">About</a>
+        <a class="nav__link" href="#contact">Contact</a>
+      </nav>
+
+      <a class="btn btn--primary btn--sm nav__call magnetic" href="tel:+15199926711">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
+        Call 519-992-6711
+      </a>
+
+      <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="mobile-menu">
+        <span></span><span></span>
+        <span class="visually-hidden">Menu</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile full-screen menu -->
+  <div class="mobile-menu" id="mobile-menu" inert>
+    <nav class="mobile-menu__links" aria-label="Mobile">
+      <a href="#services" style="--i:0">Services</a>
+      <a href="#menu-displays" style="--i:1">Menu Displays</a>
+      <a href="#work" style="--i:2">Work</a>
+      <a href="#about" style="--i:3">About</a>
+      <a href="#contact" style="--i:4">Contact</a>
+    </nav>
+    <div class="mobile-menu__footer">
+      <a class="btn btn--primary" href="tel:+15199926711">Call 519-992-6711</a>
+      <a class="mobile-menu__email" href="mailto:patelraj.ca@outlook.com">patelraj.ca@outlook.com</a>
+    </div>
+  </div>
+
+  <main id="main">
+
+    <!-- ================= 2. HERO ================= -->
+    <section class="section hero" id="home">
+      <div class="hero__glow" aria-hidden="true"></div>
+      <svg class="hex-float" data-speed="0.6" style="--size:340px; top:14%; right:-90px;" aria-hidden="true"><use href="#hex"/></svg>
+      <svg class="hex-float" data-speed="1.2" style="--size:120px; top:58%; right:18%;" aria-hidden="true"><use href="#hex"/></svg>
+      <svg class="hex-float" data-speed="0.9" style="--size:180px; top:20%; left:-60px; --o:.12;" aria-hidden="true"><use href="#hex"/></svg>
+
+      <div class="container hero__content">
+        <p class="eyebrow" data-hero-fade>Ontario · Small-business tech agency</p>
+        <h1 class="hero__title">
+          <span class="line"><span>One Stop</span></span>
+          <span class="line"><span><em>Tech</em> Solutions</span></span>
+        </h1>
+        <p class="hero__sub" data-hero-fade>Websites, marketing, SEO &amp; smart digital menu displays for small businesses.</p>
+        <div class="hero__actions" data-hero-fade>
+          <a class="btn btn--primary magnetic" href="#contact">Free consultation</a>
+          <a class="btn btn--ghost magnetic" href="#work">See our work</a>
+        </div>
+      </div>
+
+      <!-- Marquee: the second list is a duplicate for a seamless loop (keep both in sync) -->
+      <div class="marquee hero__marquee" data-hero-fade aria-label="Recent projects">
+        <div class="marquee__track">
+          <ul class="marquee__list">
+            <li class="marquee__item"><span class="marquee__thumb"><img src="images/work-1.svg" alt="" width="800" height="600"></span><span class="marquee__label">Café websites</span></li>
+            <li class="marquee__item"><span class="marquee__thumb"><img src="images/work-2.svg" alt="" width="800" height="600"></span><span class="marquee__label">Local SEO</span></li>
+            <li class="marquee__item"><span class="marquee__thumb"><img src="images/work-3.svg" alt="" width="800" height="600"></span><span class="marquee__label">Digital menu boards</span></li>
+            <li class="marquee__item"><span class="marquee__thumb"><img src="images/work-4.svg" alt="" width="800" height="600"></span><span class="marquee__label">Google &amp; social ads</span></li>
+            <li class="marquee__item"><span class="marquee__thumb"><img src="images/work-5.svg" alt="" width="800" height="600"></span><span class="marquee__label">Restaurant branding</span></li>
+            <li class="marquee__item"><span class="marquee__thumb"><img src="images/work-6.svg" alt="" width="800" height="600"></span><span class="marquee__label">Online booking</span></li>
+          </ul>
+          <ul class="marquee__list" aria-hidden="true">
+            <li class="marquee__item"><span class="marquee__thumb"><img src="images/work-1.svg" alt="" width="800" height="600"></span><span class="marquee__label">Café websites</span></li>
+            <li class="marquee__item"><span class="marquee__thumb"><img src="images/work-2.svg" alt="" width="800" height="600"></span><span class="marquee__label">Local SEO</span></li>
+            <li class="marquee__item"><span class="marquee__thumb"><img src="images/work-3.svg" alt="" width="800" height="600"></span><span class="marquee__label">Digital menu boards</span></li>
+            <li class="marquee__item"><span class="marquee__thumb"><img src="images/work-4.svg" alt="" width="800" height="600"></span><span class="marquee__label">Google &amp; social ads</span></li>
+            <li class="marquee__item"><span class="marquee__thumb"><img src="images/work-5.svg" alt="" width="800" height="600"></span><span class="marquee__label">Restaurant branding</span></li>
+            <li class="marquee__item"><span class="marquee__thumb"><img src="images/work-6.svg" alt="" width="800" height="600"></span><span class="marquee__label">Online booking</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 3. SERVICES ================= -->
+    <section class="section services" id="services">
+      <svg class="hex-float" data-speed="0.8" style="--size:280px; top:6%; left:-110px;" aria-hidden="true"><use href="#hex"/></svg>
+      <svg class="hex-float" data-speed="0.4" style="--size:160px; bottom:8%; right:4%;" aria-hidden="true"><use href="#hex"/></svg>
+
+      <div class="container">
+        <header class="section-head">
+          <p class="eyebrow">What we do</p>
+          <h2 class="section-title" data-reveal>
+            <span class="line"><span>Everything your business</span></span>
+            <span class="line"><span>needs online</span></span>
+          </h2>
+          <span class="divider" aria-hidden="true"></span>
+          <p class="section-lead">One team for your website, your marketing and the screens in your store — so everything looks, works and sells together.</p>
+        </header>
+
+        <div class="services__grid">
+          <article class="card" data-fade>
+            <span class="card__num">01</span>
+            <span class="hex-badge">
+              <svg aria-hidden="true"><use href="#hex"/></svg>
+              <svg class="hex-badge__icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4M9.5 8.5 7.5 10l2 1.5M14.5 8.5l2 1.5-2 1.5"/></svg>
+            </span>
+            <h3 class="card__title">Website Design</h3>
+            <p class="card__text">Professional, creative websites that are more than just a pretty site — fast, mobile-friendly and built to turn visitors into customers.</p>
+          </article>
+
+          <article class="card" data-fade>
+            <span class="card__num">02</span>
+            <span class="hex-badge">
+              <svg aria-hidden="true"><use href="#hex"/></svg>
+              <svg class="hex-badge__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11v2a1 1 0 0 0 1 1h2l5 4V6L6 10H4a1 1 0 0 0-1 1z"/><path d="M15 9a3 3 0 0 1 0 6M18 6a7 7 0 0 1 0 12"/></svg>
+            </span>
+            <h3 class="card__title">Digital Marketing</h3>
+            <p class="card__text">Strategic advertising on Google, Facebook and Instagram to help your business grow bigger than you imagine.</p>
+          </article>
+
+          <article class="card" data-fade>
+            <span class="card__num">03</span>
+            <span class="hex-badge">
+              <svg aria-hidden="true"><use href="#hex"/></svg>
+              <svg class="hex-badge__icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m20 20-4.5-4.5M7.5 12l2-2 1.5 1.5 2.5-3"/></svg>
+            </span>
+            <h3 class="card__title">SEO / Promotion</h3>
+            <p class="card__text">We've ranked hundreds of websites on thousands of keywords. Get found by local customers the moment they search.</p>
+          </article>
+
+          <article class="card" data-fade>
+            <span class="card__num">04</span>
+            <span class="hex-badge">
+              <svg aria-hidden="true"><use href="#hex"/></svg>
+              <svg class="hex-badge__icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="2" width="12" height="17" rx="1.5"/><path d="M9 6h6M9 9.5h6M9 13h4M10 22h4M12 19v3"/></svg>
+            </span>
+            <h3 class="card__title">Smart Digital Menu Displays</h3>
+            <p class="card__text">Real-time updates, scheduled content and eye-catching promos that boost sales and save your staff time.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 4. MENU DISPLAYS SPOTLIGHT ================= -->
+    <section class="section menu-section" id="menu-displays">
+      <svg class="hex-float" data-speed="1" style="--size:240px; top:10%; right:-80px;" aria-hidden="true"><use href="#hex"/></svg>
+      <svg class="hex-float" data-speed="0.5" style="--size:120px; bottom:12%; left:6%;" aria-hidden="true"><use href="#hex"/></svg>
+
+      <div class="container menu-feature">
+
+        <!-- Screen mockup. Each menu is a .screen__menu block — edit items/prices here.
+             data-soldout-demo marks the items the demo toggles to "Sold out". -->
+        <div class="screen-wrap" data-fade>
+          <div class="screen" data-menu-screen aria-label="Demo of a digital menu display">
+            <div class="screen__display">
+              <div class="screen__top">
+                <span class="screen__brand">Maple Street Café</span>
+                <span class="screen__live"><i></i>Live</span>
+              </div>
+
+              <div class="screen__period">
+                <span class="screen__period-label" data-period-label>Breakfast</span>
+                <span class="screen__period-time" data-period-time>7:00 – 11:00 AM</span>
+              </div>
+              <div class="screen__progress" data-menu-progress><span></span></div>
+
+              <div class="screen__menus">
+                <div class="screen__menu is-active" data-menu data-label="Breakfast" data-time="7:00 – 11:00 AM" data-clock="8:30 AM">
+                  <ul class="screen__items">
+                    <li class="screen__item"><span class="item__name">Eggs Benedict</span><span class="item__dots"></span><span class="item__price">$12.95</span><span class="soldout">Sold out</span></li>
+                    <li class="screen__item" data-soldout-demo><span class="item__name">Avocado Toast</span><span class="item__dots"></span><span class="item__price">$10.50</span><span class="soldout">Sold out</span></li>
+                    <li class="screen__item"><span class="item__name">Pancake Stack</span><span class="item__dots"></span><span class="item__price">$9.75</span><span class="soldout">Sold out</span></li>
+                    <li class="screen__item" data-soldout-demo><span class="item__name">Blueberry Muffin</span><span class="item__dots"></span><span class="item__price">$3.25</span><span class="soldout">Sold out</span></li>
+                    <li class="screen__item"><span class="item__name">Breakfast Wrap</span><span class="item__dots"></span><span class="item__price">$8.95</span><span class="soldout">Sold out</span></li>
+                    <li class="screen__item"><span class="item__name">Latte</span><span class="item__dots"></span><span class="item__price">$4.50</span><span class="soldout">Sold out</span></li>
+                  </ul>
+                  <div class="screen__promo">
+                    <span class="screen__promo-hex">Deal</span>
+                    <span><strong>Coffee + Muffin $5.99</strong><small>Until 11 AM every day</small></span>
+                  </div>
+                </div>
+
+                <div class="screen__menu" data-menu data-label="Lunch" data-time="11:00 AM – 3:00 PM" data-clock="12:15 PM" aria-hidden="true">
+                  <ul class="screen__items">
+                    <li class="screen__item" data-soldout-demo><span class="item__name">Butter Chicken Bowl</span><span class="item__dots"></span><span class="item__price">$15.95</span><span class="soldout">Sold out</span></li>
+                    <li class="screen__item"><span class="item__name">Club Sandwich</span><span class="item__dots"></span><span class="item__price">$13.50</span><span class="soldout">Sold out</span></li>
+                    <li class="screen__item"><span class="item__name">Caesar Salad</span><span class="item__dots"></span><span class="item__price">$11.25</span><span class="soldout">Sold out</span></li>
+                    <li class="screen__item" data-soldout-demo><span class="item__name">Soup of the Day</span><span class="item__dots"></span><span class="item__price">$6.95</span><span class="soldout">Sold out</span></li>
+                    <li class="screen__item"><span class="item__name">Veggie Burger</span><span class="item__dots"></span><span class="item__price">$14.25</span><span class="soldout">Sold out</span></li>
+                    <li class="screen__item"><span class="item__name">Iced Tea</span><span class="item__dots"></span><span class="item__price">$3.75</span><span class="soldout">Sold out</span></li>
+                  </ul>
+                  <div class="screen__promo">
+                    <span class="screen__promo-hex">Combo</span>
+                    <span><strong>Any Bowl + Drink $17.99</strong><small>Lunch special · 11 AM – 3 PM</small></span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="screen__footer">
+                <span data-screen-clock>8:30 AM</span>
+                <span>Scan to order ▸</span>
+              </div>
+            </div>
+          </div>
+          <div class="screen__stand" aria-hidden="true"></div>
+          <p class="screen-status" data-menu-status>Live demo — watch the menu update itself.</p>
+          <button class="demo-toggle" type="button" data-menu-toggle aria-pressed="false">Pause demo</button>
+        </div>
+
+        <div class="menu-feature__copy">
+          <header class="section-head section-head--tight">
+            <p class="eyebrow">Smart digital menu displays</p>
+            <h2 class="section-title" data-reveal>
+              <span class="line"><span>Menus that</span></span>
+              <span class="line"><span>update themselves</span></span>
+            </h2>
+            <span class="divider" aria-hidden="true"></span>
+            <p class="section-lead">Change a price, mark an item sold out or launch a promo from your phone — your screens update in seconds. Breakfast, lunch and dinner switch automatically on schedule.</p>
+          </header>
+
+          <div class="tiles">
+            <div class="tile" data-fade>
+              <span class="hex-badge">
+                <svg aria-hidden="true"><use href="#hex"/></svg>
+                <svg class="hex-badge__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg>
+              </span>
+              <div>
+                <h3>Real-time Updates</h3>
+                <p>Sold out? Price change? Update every screen instantly — no reprinting.</p>
+              </div>
+            </div>
+            <div class="tile" data-fade>
+              <span class="hex-badge">
+                <svg aria-hidden="true"><use href="#hex"/></svg>
+                <svg class="hex-badge__icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4M12 13v3l2 1"/></svg>
+              </span>
+              <div>
+                <h3>Scheduled Content</h3>
+                <p>Set it once. Menus and specials change automatically by time of day.</p>
+              </div>
+            </div>
+            <div class="tile" data-fade>
+              <span class="hex-badge">
+                <svg aria-hidden="true"><use href="#hex"/></svg>
+                <svg class="hex-badge__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg>
+              </span>
+              <div>
+                <h3>Boost Sales &amp; Efficiency</h3>
+                <p>Highlight high-margin items and combos, and free up staff from answering “what’s available?”.</p>
+              </div>
+            </div>
+          </div>
+
+          <a class="btn btn--primary magnetic menu-feature__cta" href="#contact">Book a menu display demo</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 5. WORK ================= -->
+    <!-- Placeholder projects — replace names, categories, images and links with your real work -->
+    <section class="section work" id="work">
+      <svg class="hex-float" data-speed="0.7" style="--size:300px; top:-40px; right:-120px;" aria-hidden="true"><use href="#hex"/></svg>
+
+      <div class="container">
+        <header class="section-head">
+          <p class="eyebrow">Selected work</p>
+          <h2 class="section-title" data-reveal>
+            <span class="line"><span>Projects we're</span></span>
+            <span class="line"><span>proud of</span></span>
+          </h2>
+          <span class="divider" aria-hidden="true"></span>
+        </header>
+
+        <div class="work__grid">
+          <article class="work-card" data-fade>
+            <a class="work-card__link" href="#contact">
+              <div class="work-card__media reveal-img"><img src="images/work-1.svg" alt="Maple Street Café website preview" width="800" height="600" loading="lazy"></div>
+              <div class="work-card__info">
+                <span class="work-card__cat">Website · Digital menu</span>
+                <h3 class="work-card__title">Maple Street Café</h3>
+              </div>
+            </a>
+          </article>
+          <article class="work-card" data-fade>
+            <a class="work-card__link" href="#contact">
+              <div class="work-card__media reveal-img"><img src="images/work-2.svg" alt="Northshore Dental website preview" width="800" height="600" loading="lazy"></div>
+              <div class="work-card__info">
+                <span class="work-card__cat">Website · SEO</span>
+                <h3 class="work-card__title">Northshore Dental</h3>
+              </div>
+            </a>
+          </article>
+          <article class="work-card" data-fade>
+            <a class="work-card__link" href="#contact">
+              <div class="work-card__media reveal-img"><img src="images/work-3.svg" alt="Brick &amp; Ember Pizza menu display preview" width="800" height="600" loading="lazy"></div>
+              <div class="work-card__info">
+                <span class="work-card__cat">Digital menu displays</span>
+                <h3 class="work-card__title">Brick &amp; Ember Pizza</h3>
+              </div>
+            </a>
+          </article>
+          <article class="work-card" data-fade>
+            <a class="work-card__link" href="#contact">
+              <div class="work-card__media reveal-img"><img src="images/work-4.svg" alt="Lakeside Realty website preview" width="800" height="600" loading="lazy"></div>
+              <div class="work-card__info">
+                <span class="work-card__cat">Website · Marketing</span>
+                <h3 class="work-card__title">Lakeside Realty</h3>
+              </div>
+            </a>
+          </article>
+          <article class="work-card" data-fade>
+            <a class="work-card__link" href="#contact">
+              <div class="work-card__media reveal-img"><img src="images/work-5.svg" alt="Spice Route Kitchen campaign preview" width="800" height="600" loading="lazy"></div>
+              <div class="work-card__info">
+                <span class="work-card__cat">SEO · Google Ads</span>
+                <h3 class="work-card__title">Spice Route Kitchen</h3>
+              </div>
+            </a>
+          </article>
+          <article class="work-card" data-fade>
+            <a class="work-card__link" href="#contact">
+              <div class="work-card__media reveal-img"><img src="images/work-6.svg" alt="Peak Fitness Studio website preview" width="800" height="600" loading="lazy"></div>
+              <div class="work-card__info">
+                <span class="work-card__cat">Website · Social ads</span>
+                <h3 class="work-card__title">Peak Fitness Studio</h3>
+              </div>
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 6. PROCESS ================= -->
+    <section class="section process-section" id="process">
+      <svg class="hex-float" data-speed="0.9" style="--size:200px; top:12%; left:-70px;" aria-hidden="true"><use href="#hex"/></svg>
+
+      <div class="container">
+        <header class="section-head section-head--center">
+          <p class="eyebrow">How it works</p>
+          <h2 class="section-title" data-reveal>
+            <span class="line"><span>Simple, honest</span></span>
+            <span class="line"><span>process</span></span>
+          </h2>
+          <span class="divider" aria-hidden="true"></span>
+        </header>
+
+        <div class="process">
+          <div class="process__line" aria-hidden="true"><span class="process__line-fill"></span></div>
+          <ol class="process__steps">
+            <li class="process__step" data-fade>
+              <div class="process__badge"><svg aria-hidden="true"><use href="#hex"/></svg><span>01</span></div>
+              <div>
+                <h3>Free consultation</h3>
+                <p>We learn about your business, goals and customers — no pressure, no jargon.</p>
+              </div>
+            </li>
+            <li class="process__step" data-fade>
+              <div class="process__badge"><svg aria-hidden="true"><use href="#hex"/></svg><span>02</span></div>
+              <div>
+                <h3>Fixed quote</h3>
+                <p>A clear, written price up front. No hourly surprises.</p>
+              </div>
+            </li>
+            <li class="process__step" data-fade>
+              <div class="process__badge"><svg aria-hidden="true"><use href="#hex"/></svg><span>03</span></div>
+              <div>
+                <h3>Design</h3>
+                <p>You see and approve the look before a single line of code.</p>
+              </div>
+            </li>
+            <li class="process__step" data-fade>
+              <div class="process__badge"><svg aria-hidden="true"><use href="#hex"/></svg><span>04</span></div>
+              <div>
+                <h3>Build</h3>
+                <p>Fast, mobile-first and SEO-ready, tested on every device.</p>
+              </div>
+            </li>
+            <li class="process__step" data-fade>
+              <div class="process__badge"><svg aria-hidden="true"><use href="#hex"/></svg><span>05</span></div>
+              <div>
+                <h3>Launch &amp; support</h3>
+                <p>We go live together and stay on call for updates and help.</p>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 7. STATS / ABOUT ================= -->
+    <section class="section about" id="about">
+      <svg class="hex-float" data-speed="0.6" style="--size:260px; bottom:-60px; right:-90px;" aria-hidden="true"><use href="#hex"/></svg>
+
+      <div class="container">
+        <div class="about__intro">
+          <header class="section-head section-head--tight">
+            <p class="eyebrow">About us</p>
+            <h2 class="section-title" data-reveal>
+              <span class="line"><span>Small team.</span></span>
+              <span class="line"><span>Big results.</span></span>
+            </h2>
+            <span class="divider" aria-hidden="true"></span>
+            <p class="section-lead">One Stop Tech Solutions is a local Ontario agency helping restaurants, shops and service businesses compete online. You deal directly with the people doing the work — one call for your website, marketing, SEO and in-store screens.</p>
+          </header>
+
+          <div class="about__media" data-fade>
+            <svg class="about__outline" aria-hidden="true"><use href="#hex"/></svg>
+            <!-- Swap for a team / office photo -->
+            <div class="about__img hex-mask reveal-img" data-reveal-shape="hex">
+              <img src="images/about.svg" alt="The One Stop Tech Solutions team" width="600" height="692" loading="lazy">
+            </div>
+          </div>
+        </div>
+
+        <!-- Placeholder numbers — update data-count AND the visible number -->
+        <div class="stats">
+          <div class="stat" data-fade>
+            <svg class="stat__hex" aria-hidden="true"><use href="#hex"/></svg>
+            <p class="stat__num"><span data-count="150">150</span><span class="stat__suffix">+</span></p>
+            <p class="stat__label">Websites built</p>
+          </div>
+          <div class="stat" data-fade>
+            <svg class="stat__hex" aria-hidden="true"><use href="#hex"/></svg>
+            <p class="stat__num"><span data-count="3000">3,000</span><span class="stat__suffix">+</span></p>
+            <p class="stat__label">Keywords ranked</p>
+          </div>
+          <div class="stat" data-fade>
+            <svg class="stat__hex" aria-hidden="true"><use href="#hex"/></svg>
+            <p class="stat__num"><span data-count="60">60</span><span class="stat__suffix">+</span></p>
+            <p class="stat__label">Menu screens installed</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 8. TESTIMONIALS ================= -->
+    <!-- PLACEHOLDER reviews — replace with real client reviews (with permission) before launch -->
+    <section class="section testimonials" id="testimonials">
+      <svg class="hex-float" data-speed="0.8" style="--size:220px; top:8%; left:4%;" aria-hidden="true"><use href="#hex"/></svg>
+
+      <div class="container">
+        <header class="section-head section-head--center">
+          <p class="eyebrow">Kind words</p>
+          <h2 class="section-title" data-reveal>
+            <span class="line"><span>What clients say</span></span>
+          </h2>
+          <span class="divider" aria-hidden="true"></span>
+        </header>
+
+        <div class="slider" data-slider aria-roledescription="carousel" aria-label="Client testimonials">
+          <div class="slider__viewport">
+            <div class="slider__track">
+              <figure class="slide" aria-roledescription="slide">
+                <p class="slide__stars" aria-label="5 out of 5 stars">★★★★★</p>
+                <blockquote>“Our new website finally looks as good as our food. Online orders went up within the first month, and the menu screens save us so much time.”</blockquote>
+                <figcaption><strong>Client Name</strong><span>Restaurant owner · City, ON</span></figcaption>
+              </figure>
+              <figure class="slide" aria-roledescription="slide">
+                <p class="slide__stars" aria-label="5 out of 5 stars">★★★★★</p>
+                <blockquote>“We went from page three to the top of Google for our main services. The phone actually rings now.”</blockquote>
+                <figcaption><strong>Client Name</strong><span>Clinic manager · City, ON</span></figcaption>
+              </figure>
+              <figure class="slide" aria-roledescription="slide">
+                <p class="slide__stars" aria-label="5 out of 5 stars">★★★★★</p>
+                <blockquote>“Fixed price, no surprises, and they answer when I call. Exactly what a small business needs.”</blockquote>
+                <figcaption><strong>Client Name</strong><span>Retail store owner · City, ON</span></figcaption>
+              </figure>
+            </div>
+          </div>
+          <div class="slider__controls">
+            <button class="slider__arrow" type="button" data-slider-prev aria-label="Previous testimonial">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
+            </button>
+            <div class="slider__dots" data-slider-dots></div>
+            <button class="slider__arrow" type="button" data-slider-next aria-label="Next testimonial">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 9. FAQ ================= -->
+    <section class="section faq" id="faq">
+      <svg class="hex-float" data-speed="0.6" style="--size:240px; top:20%; right:-90px;" aria-hidden="true"><use href="#hex"/></svg>
+
+      <div class="container">
+        <header class="section-head section-head--center">
+          <p class="eyebrow">Questions</p>
+          <h2 class="section-title" data-reveal>
+            <span class="line"><span>Frequently asked</span></span>
+          </h2>
+          <span class="divider" aria-hidden="true"></span>
+        </header>
+
+        <div class="faq__list">
+          <div class="faq__item" data-fade>
+            <h3 class="faq__h"><button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-1">How much does a website cost?<span class="faq__icon" aria-hidden="true"></span></button></h3>
+            <div class="faq__a" id="faq-1" role="region"><div><p>Every project starts with a free consultation, followed by a fixed, written quote — no hourly billing surprises. The price depends on the number of pages and features (online ordering, booking, e-commerce). We'll give you clear options to fit your budget.</p></div></div>
+          </div>
+          <div class="faq__item" data-fade>
+            <h3 class="faq__h"><button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-2">How long does it take?<span class="faq__icon" aria-hidden="true"></span></button></h3>
+            <div class="faq__a" id="faq-2" role="region"><div><p>Most small-business websites go live in about 2–4 weeks after the quote is approved. Larger sites or online stores can take longer — we'll give you a timeline up front.</p></div></div>
+          </div>
+          <div class="faq__item" data-fade>
+            <h3 class="faq__h"><button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-3">WordPress or custom-built?<span class="faq__icon" aria-hidden="true"></span></button></h3>
+            <div class="faq__a" id="faq-3" role="region"><div><p>Both. WordPress is great if you want to edit pages and blog posts yourself. A custom-coded site is faster and more secure for simpler sites. We'll recommend what fits how you actually want to work.</p></div></div>
+          </div>
+          <div class="faq__item" data-fade>
+            <h3 class="faq__h"><button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-4">How do digital menu displays work?<span class="faq__icon" aria-hidden="true"></span></button></h3>
+            <div class="faq__a" id="faq-4" role="region"><div><p>We set up commercial screens with a small media player, design your menus, and give you a simple online dashboard. Change a price or mark an item sold out from your phone and every screen updates in seconds. Breakfast, lunch and dinner menus can switch automatically on a schedule.</p></div></div>
+          </div>
+          <div class="faq__item" data-fade>
+            <h3 class="faq__h"><button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-5">Do you offer support after launch?<span class="faq__icon" aria-hidden="true"></span></button></h3>
+            <div class="faq__a" id="faq-5" role="region"><div><p>Yes. We offer ongoing care plans for updates, backups, security and content changes — or call us whenever you need a hand. You'll always talk to a real person.</p></div></div>
+          </div>
+          <div class="faq__item" data-fade>
+            <h3 class="faq__h"><button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-6">What areas do you serve?<span class="faq__icon" aria-hidden="true"></span></button></h3>
+            <div class="faq__a" id="faq-6" role="region"><div><p>We're based in Ontario and work with businesses across the province — in person locally, and by phone or video call anywhere in Canada.</p></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 10. CONTACT ================= -->
+    <section class="section contact" id="contact">
+      <svg class="hex-float" data-speed="0.8" style="--size:320px; top:-80px; left:-120px;" aria-hidden="true"><use href="#hex"/></svg>
+      <svg class="hex-float" data-speed="1.1" style="--size:140px; bottom:10%; right:6%;" aria-hidden="true"><use href="#hex"/></svg>
+
+      <div class="container contact__grid">
+        <div class="contact__copy">
+          <p class="eyebrow">Let's talk</p>
+          <h2 class="section-title contact__title" data-reveal>
+            <span class="line"><span>High quality</span></span>
+            <span class="line"><span>websites for</span></span>
+            <span class="line"><span><em>your business</em></span></span>
+          </h2>
+          <span class="divider" aria-hidden="true"></span>
+          <p class="section-lead">Book a free, no-obligation consultation. Tell us about your business and we'll get back to you within one business day.</p>
+
+          <div class="contact__actions">
+            <a class="contact-btn magnetic" href="tel:+15199926711">
+              <span class="hex-badge">
+                <svg aria-hidden="true"><use href="#hex"/></svg>
+                <svg class="hex-badge__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
+              </span>
+              <span><small>Call</small><strong>+1 (519) 992-6711</strong></span>
+            </a>
+            <a class="contact-btn magnetic" href="mailto:patelraj.ca@outlook.com">
+              <span class="hex-badge">
+                <svg aria-hidden="true"><use href="#hex"/></svg>
+                <svg class="hex-badge__icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg>
+              </span>
+              <span><small>Email</small><strong>patelraj.ca@outlook.com</strong></span>
+            </a>
+          </div>
+        </div>
+
+        <!--
+          FORM SETUP
+          • Default: mailto — opens the visitor's email app with the message pre-filled (works with no setup).
+          • Formspree: create a form at formspree.io, then change action to
+            "https://formspree.io/f/YOUR_FORM_ID" and remove enctype="text/plain".
+            script.js will then send it in the background and show a thank-you message.
+        -->
+        <form class="form" id="contact-form" action="mailto:patelraj.ca@outlook.com" method="post" enctype="text/plain" data-email="patelraj.ca@outlook.com" data-fade>
+          <div class="form__grid">
+            <div class="field">
+              <input type="text" id="f-name" name="name" placeholder=" " autocomplete="name" required>
+              <label for="f-name">Your name *</label>
+            </div>
+            <div class="field">
+              <input type="text" id="f-business" name="business" placeholder=" " autocomplete="organization">
+              <label for="f-business">Business name</label>
+            </div>
+            <div class="field">
+              <input type="email" id="f-email" name="email" placeholder=" " autocomplete="email" required>
+              <label for="f-email">Email *</label>
+            </div>
+            <div class="field">
+              <input type="tel" id="f-phone" name="phone" placeholder=" " autocomplete="tel">
+              <label for="f-phone">Phone</label>
+            </div>
+            <div class="field field--full">
+              <select id="f-service" name="service" required>
+                <option value="" disabled selected hidden></option>
+                <option>Website Design</option>
+                <option>Digital Marketing</option>
+                <option>SEO / Promotion</option>
+                <option>Smart Digital Menu Displays</option>
+                <option>Not sure yet — let's talk</option>
+              </select>
+              <label for="f-service">Service you're interested in *</label>
+            </div>
+            <div class="field field--full">
+              <textarea id="f-message" name="message" placeholder=" " rows="5" required></textarea>
+              <label for="f-message">Tell us about your project *</label>
+            </div>
+            <!-- Spam trap (leave empty) -->
+            <input class="honeypot" type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true">
+          </div>
+          <div class="form__footer">
+            <p class="form__note">* Required. We never share your details.</p>
+            <button class="btn btn--primary magnetic" type="submit">Send message</button>
+          </div>
+          <p class="form__status" data-form-status role="status"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= 11. FOOTER ================= -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <a href="#home" class="logo" aria-label="One Stop Tech Solutions — back to top">
+            <svg class="logo__mark" viewBox="0 0 100 100" aria-hidden="true">
+              <use href="#hex" class="logo__outer"/>
+              <polygon class="logo__inner" points="50 30 67 40 67 60 50 70 33 60 33 40"/>
+            </svg>
+            <span class="logo__text">
+              <span class="logo__name">One Stop</span>
+              <span class="logo__tag">Tech Solutions</span>
+            </span>
+          </a>
+          <p>Websites, marketing, SEO &amp; smart digital menu displays for small businesses in Ontario, Canada.</p>
+        </div>
+
+        <div>
+          <h3>Contact</h3>
+          <ul class="footer__list">
+            <li><a href="tel:+15199926711">+1 (519) 992-6711</a></li>
+            <li><a href="mailto:patelraj.ca@outlook.com">patelraj.ca@outlook.com</a></li>
+            <li>Ontario, Canada</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>Explore</h3>
+          <ul class="footer__list">
+            <li><a href="#services">Services</a></li>
+            <li><a href="#menu-displays">Menu Displays</a></li>
+            <li><a href="#work">Work</a></li>
+            <li><a href="#faq">FAQ</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>Follow</h3>
+          <!-- Replace # with your profile URLs -->
+          <div class="socials">
+            <a class="social" href="#" aria-label="Facebook">
+              <svg aria-hidden="true"><use href="#hex"/></svg>
+              <svg class="social__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            </a>
+            <a class="social" href="#" aria-label="Instagram">
+              <svg aria-hidden="true"><use href="#hex"/></svg>
+              <svg class="social__icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></svg>
+            </a>
+            <a class="social" href="#" aria-label="LinkedIn">
+              <svg aria-hidden="true"><use href="#hex"/></svg>
+              <svg class="social__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            </a>
+            <a class="social" href="#" aria-label="Google Business Profile">
+              <svg aria-hidden="true"><use href="#hex"/></svg>
+              <svg class="social__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <p>© <span data-year>2026</span> One Stop Tech Solutions. All rights reserved.</p>
+        <button class="to-top magnetic" type="button" data-to-top>
+          Back to top
+          <span class="to-top__hex">
+            <svg aria-hidden="true"><use href="#hex"/></svg>
+            <svg class="to-top__arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg>
+          </span>
+        </button>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
